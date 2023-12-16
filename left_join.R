@@ -17,8 +17,8 @@ con <- dbConnect(odbc::odbc(),
                  PWD = password)
 
 query <- paste(
-  "SELECT * FROM transactionlogs",
-  "WHERE fromuserid IN (", paste("'", csv_unique, "'", collapse = ","), ")"
+  "SELECT * FROM transactions",
+  "WHERE userid IN (", paste("'", csv_unique, "'", collapse = ","), ")"
 )
 result <- dbGetQuery(con, query)
 
